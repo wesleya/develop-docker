@@ -5,4 +5,4 @@ services:
     ports:
      - "1313:1313"
     volumes:
-     - ./:/usr/share/site
+     - ./:/root/site
