@@ -2,7 +2,6 @@ these are docker files I use for developing my side projects
 
 ## To Do
 
-* commit docker images to docker hub, then update docker-compose files to pull the hub version. (don't require manual build)
 * figure out why we need the bind=0.0.0.0
 * add instructions for just using a single command vs using the docker-compose.yml
 * add instructions for manual build vs using the docker hub version
@@ -10,19 +9,13 @@ these are docker files I use for developing my side projects
 ## Commit Updated Image
 
 ```
-# build new image
-$ docker build -t hugo-server .
+# build latest image. tag it as new update (1.0) and tag it as latest. run this from directory with the Dockerfile
+$ docker build -t wagena/develop-hugo:1.0 -t wagena/develop-hugo:latest .
 
-# run new image
-$ docker run -t -i hugo-server /bin/bash
+# Log into Docker Hub from our CLI client
+$ docker login
 
-# exit out of the bash you just started
-$ exit
-
-# get list of all containers that were run
-$ docker ps -a
-
-# commit the updated image
-$ docker commit c94b90777a04 wagena/develop-hugo:0.1
-$ docker commit c94b90777a04 wagena/develop-hugo:latest
+# Push up each tagged image
+$ docker push wagena/develop-hugo:1.0
+$ docker push wagena/develop-hugo:latest
 ```
