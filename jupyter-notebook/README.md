@@ -6,7 +6,10 @@
 ```
 $ docker-compose up
 ```
-3. optional if you want to get a bash in the docker container
+
+3. copy and paste the url from the command output into your browser and go!
+
+4. optional if you want to get a bash in the docker container
 ```
 # find the name of the container
 $ docker-compose ps
@@ -15,7 +18,7 @@ $ docker-compose ps
 $ docker exec -it <name-of-container> bash
 ```
 
-4. bring the container down when you're done with hugo
+5. bring the container down when you're done with hugo
 ```
 $ docker-compose down
 ```

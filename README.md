@@ -20,6 +20,16 @@ $ docker push wagena/develop-hugo:1.0
 $ docker push wagena/develop-hugo:latest
 ```
 
+## Viewing Containers
+
+```
+# list local images
+docker images
+
+# list running containers
+docker ps
+```
+
 ## Cleaning Up
 
 If you're like me and make tons of mistakes and don't want the record of all your broken images and containers lying around, you can clean them them:
@@ -32,10 +42,10 @@ $ docker rm <Container ID>
 $ docker rm $(docker ps -a -q)
 
 # remove images: 
-$ docker rmi <Container ID>
+$ docker rmi <Image ID>
 
 # remove all images: 
-$ docker rmi $(docker ps -a -q)
+$ docker rmi $(docker images -a -q) -f
 ```
 
 Note: You must remove all containers using an image before deleting the image
