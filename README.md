@@ -1,10 +1,12 @@
-these are docker files I use for developing my side projects
+Each directory in this repo contains my setup for starting a new project type. For example hugo directory is for starting a new hugo site.
 
 ## To Do
 
 * figure out why we need the bind=0.0.0.0
 * add instructions for just using a single command vs using the docker-compose.yml
 * add instructions for manual build vs using the docker hub version
+* add a setup for laravel projects
+* add a setup for vanilla php projects
 
 ## Updating Images
 
