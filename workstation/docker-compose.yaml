@@ -1,0 +1,12 @@
+version: '3'
+services:
+  workstation:
+    image: wagena/workstation:latest
+    volumes:
+     - ../../:/home/wagena/projects
+    working_dir: /home/wagena
+    stdin_open: true
+
+    # this is the equivalent of -it in "docker run"
+    tty: true
+    entrypoint: zsh

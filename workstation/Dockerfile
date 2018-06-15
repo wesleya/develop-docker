@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
 
 # install any programs I use
-RUN apt-get -y install vim curl zip unzip git wget zsh
+RUN apt-get -y install vim curl zip unzip git wget tmux zsh
 
 # this is so the php7 installs don't ask us for timezone input
 RUN apt-get update \
@@ -33,9 +33,12 @@ Run apt-get -y autoremove \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # create my user and set my working directory
-RUN useradd -ms /bin/bash wagena
+ RUN useradd -ms /bin/bash wagena
 USER wagena
 WORKDIR /home/wagena
 
 RUN git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
 	&& cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
+# run this command by default
+CMD ["zsh"]
