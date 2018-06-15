@@ -1,3 +1,10 @@
+## To Do
+
+* add better notes on how this should work
+* add a config file for choosing a different zsh theme (one that includes full path)
+* figure out how to install my vim settings
+* get laravel working
+
 docker build -t wagena/workstation:1.0 -t wagena/workstation:latest .
 
 docker run --rm -it wagena/workstation bash
